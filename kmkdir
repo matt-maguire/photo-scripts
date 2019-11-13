@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Create a directory with date and optional tag, ready to hold some raw files
+
+destination_root=~/shoots/
+dir_date=$(date "+%Y_%m_%d")
+if [ -z "$1" ]; then
+  destination=$destination_root$dir_date
+else
+  destination=$destination_root$dir_date-$1
+fi
+shoots-mkdir $destination

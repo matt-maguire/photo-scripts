@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Common script to create work folder with associated workflow structure
+
+echo Creating $destination
+echo -----------------------------------------------------------------------------
+mkdir -p $destination
+mkdir -p $destination/exported
+mkdir -p $destination/exported/finals
+mkdir -p $destination/exported/finals/watermarked-noexport
+mkdir -p $destination/exported/discards-noexport
+
+cd $destination
+open $destination
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+camera_source="/Volumes/Untitled"
+destination_root=~/shoots/
+dir_date=$(date "+%Y_%m_%d")
+if [-z "$1" ]; then
+  destination=$destination_root$dir_date/
+else
+  destination=$destination_root$dir_date-$1/
+fi
+shoots-mkdir $destination
+echo Moving files from Camera
+find $camera_source -name "*.ARW" -exec mv {} $destination \;
+
+

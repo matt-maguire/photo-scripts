@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Copies Lightroom external SSD over to backup SSD
+
+rsync -avx --delete /Volumes/LR1A/Pictures /Volumes/LR1A/Catalog /Volumes/LR1B
+

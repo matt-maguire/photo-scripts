@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Reduce size of jpg files in current directory, to make them web-friendly
+
+filematch=./$1*.jpg[2500x]
+convert $filematch -quality 85% web%03d.jpg

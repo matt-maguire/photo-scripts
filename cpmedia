@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Script copies media mounted via gphoto to ~/shoots directory.
+# Not working on my mac -- gphoto doesn't recognise A7R4 yet.
+# Am using the cpcard script instead.
+
+camera_source=/run/user/1000/gvfs/gphoto2:"
+destination_root=~/shoots/
+dir_date=$(date "+%Y_%m_%d")
+if [-z "$1" ]; then
+  destination=$destination_root$dir_date/
+else
+  destination=$destination_root$dir_date-$1/
+fi
+shoots-mkdir $destination
+echo Moving files from Camera
+find $camera_source -name "*.ARW" -exec mv {} $destination \;
+
+
