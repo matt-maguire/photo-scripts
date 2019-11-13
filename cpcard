@@ -1,5 +1,5 @@
 #!/bin/bash
-camera_source="/Volumes/Untitled"
+camera_source="/Volumes/A7R4-slot2"
 destination_root=~/shoots/
 dir_date=$(date "+%Y_%m_%d")
 if [-z "$1" ]; then
